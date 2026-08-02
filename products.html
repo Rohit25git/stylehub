@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Products — StyleHub</title>
+<meta name="description" content="Browse men's, women's and kids' clothing, footwear and accessories at StyleHub. Filter by category, size, color, price and brand.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn" id="accountLink" title="Account"><i class="fa-regular fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1 id="listingTitle">Shop All Products</h1>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Shop</nav>
+  </div>
+</div>
+
+<section class="section" style="padding-top:50px;">
+  <div class="container listing-layout">
+
+    <form class="filters" id="filters">
+      <div class="filter-group">
+        <h4>Gender</h4>
+        <div class="filter-options">
+          <label class="check-row"><input type="checkbox" value="men" data-filter="gender"> Men</label>
+          <label class="check-row"><input type="checkbox" value="women" data-filter="gender"> Women</label>
+          <label class="check-row"><input type="checkbox" value="kids" data-filter="gender"> Kids</label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Category</h4>
+        <div class="filter-options" id="categoryFilters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Size</h4>
+        <div class="filter-options" id="sizeFilters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Color</h4>
+        <div class="color-options" id="colorFilters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price</h4>
+        <div class="price-range">
+          <input type="range" id="priceRange" min="500" max="10000" step="100" value="10000">
+          <div class="price-values"><span>₹500</span><span id="priceRangeValue">₹10,000</span></div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Brand</h4>
+        <div class="filter-options" id="brandFilters"></div>
+      </div>
+
+      <button type="button" id="clearFilters" class="btn btn-outline btn-sm btn-block">Clear All Filters</button>
+    </form>
+
+    <main>
+      <div class="listing-toolbar">
+        <span class="result-count" id="resultCount">Showing products</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="featured">Sort: Featured</option>
+          <option value="newest">Newest First</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Customer Rating</option>
+        </select>
+      </div>
+      <div class="active-filters" id="activeFilters"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

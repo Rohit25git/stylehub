@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account — StyleHub</title>
+<meta name="description" content="Manage your StyleHub profile, order history, saved addresses, wishlist and size preferences.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn active" id="accountLink" title="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1>My Account</h1>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> My Account</nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container account-layout">
+
+    <aside class="account-side">
+      <div class="account-user">
+        <div class="account-avatar" id="acctInitial">S</div>
+        <div>
+          <strong id="acctName">Guest</strong>
+          <span id="acctEmail">guest@stylehub.com</span>
+        </div>
+      </div>
+      <ul class="account-menu">
+        <li><button class="active" data-panel="profile"><i class="fa-regular fa-user"></i> Profile</button></li>
+        <li><button data-panel="orders"><i class="fa-solid fa-box"></i> Order History</button></li>
+        <li><button data-panel="addresses"><i class="fa-solid fa-location-dot"></i> Saved Addresses</button></li>
+        <li><button data-panel="wishlist"><i class="fa-regular fa-heart"></i> Wishlist</button></li>
+        <li><button data-panel="preferences"><i class="fa-solid fa-ruler"></i> Size Preferences</button></li>
+        <li><button class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+      </ul>
+    </aside>
+
+    <div>
+      <!-- PROFILE -->
+      <div class="account-panel active" id="panel-profile">
+        <div class="panel-head"><h2>My Profile</h2></div>
+        <form class="form-card" id="profileForm">
+          <div class="form-grid">
+            <div class="form-field"><label>Full Name</label><input type="text" id="profileName" required></div>
+            <div class="form-field"><label>Email Address</label><input type="email" id="profileEmail" disabled></div>
+            <div class="form-field"><label>Phone Number</label><input type="tel" id="profilePhone" placeholder="+91 98765 43210"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="account-panel" id="panel-orders">
+        <div class="panel-head"><h2>Order History</h2></div>
+        <div id="ordersList"></div>
+      </div>
+
+      <!-- ADDRESSES -->
+      <div class="account-panel" id="panel-addresses">
+        <div class="panel-head"><h2>Saved Addresses</h2></div>
+        <div class="addr-grid" id="addressGrid" style="margin-bottom:30px;"></div>
+        <form class="form-card" id="newAddressForm">
+          <h3 style="margin-bottom:18px;font-size:1rem;"><i class="fa-solid fa-plus"></i>&nbsp; Add New Address</h3>
+          <div class="form-grid">
+            <div class="form-field"><label>Label (e.g. Home, Office)</label><input type="text" id="addrLabel" required></div>
+            <div class="form-field"><label>Phone Number</label><input type="tel" id="addrPhone" required></div>
+            <div class="form-field full"><label>Address Line</label><input type="text" id="addrLine" required></div>
+            <div class="form-field"><label>City</label><input type="text" id="addrCity" required></div>
+            <div class="form-field"><label>State</label><input type="text" id="addrState" required></div>
+            <div class="form-field"><label>Pincode</label><input type="text" id="addrPin" required></div>
+          </div>
+          <button type="submit" class="btn btn-dark">Add Address</button>
+        </form>
+      </div>
+
+      <!-- WISHLIST -->
+      <div class="account-panel" id="panel-wishlist">
+        <div class="panel-head"><h2>My Wishlist</h2></div>
+        <div class="product-grid wishlist-grid" id="wishlistGrid"></div>
+      </div>
+
+      <!-- SIZE PREFERENCES -->
+      <div class="account-panel" id="panel-preferences">
+        <div class="panel-head"><h2>Size Preferences</h2></div>
+        <form class="form-card" id="prefsForm">
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Top Size</label>
+              <select id="prefTop"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+            </div>
+            <div class="form-field">
+              <label>Bottom Size</label>
+              <select id="prefBottom"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+            </div>
+            <div class="form-field">
+              <label>Shoe Size (UK)</label>
+              <select id="prefShoe"><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Preferred Fit</label>
+            <div class="pref-grid">
+              <label class="check-row"><input type="radio" name="prefFit" value="Slim"> Slim</label>
+              <label class="check-row"><input type="radio" name="prefFit" value="Regular"> Regular</label>
+              <label class="check-row"><input type="radio" name="prefFit" value="Relaxed"> Relaxed</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Preferences</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — StyleHub</title>
+<meta name="description" content="Enter your shipping address, choose a payment method and place your order on StyleHub.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn" id="accountLink" title="Account"><i class="fa-regular fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1>Checkout</h1>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <a href="cart.html">Cart</a> <span class="sep">/</span> Checkout</nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div id="checkoutEmpty" style="display:none;" class="cart-empty">
+      <i class="fa-solid fa-cart-arrow-down"></i>
+      <h2>Your cart is empty</h2>
+      <p style="color:var(--gray);margin:14px 0 26px;">Add a few products before heading to checkout.</p>
+      <a href="products.html" class="btn btn-primary">Browse Products</a>
+    </div>
+
+    <div id="checkoutFormSection">
+      <div class="checkout-steps">
+        <div>1. Cart</div>
+        <div class="active">2. Shipping &amp; Payment</div>
+        <div>3. Confirmation</div>
+      </div>
+
+      <form id="checkoutForm" class="checkout-layout" novalidate>
+        <div>
+          <div class="form-card">
+            <h3><span class="num">1</span> Shipping Address</h3>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Full Name *</label>
+                <input type="text" id="shipName" required>
+                <span class="error-msg">Please enter your full name.</span>
+              </div>
+              <div class="form-field">
+                <label>Phone Number *</label>
+                <input type="tel" id="shipPhone" required>
+                <span class="error-msg">Please enter a valid phone number.</span>
+              </div>
+              <div class="form-field full">
+                <label>Email Address *</label>
+                <input type="email" id="shipEmail" required>
+                <span class="error-msg">Please enter a valid email address.</span>
+              </div>
+              <div class="form-field full">
+                <label>Address Line *</label>
+                <input type="text" id="shipAddress" placeholder="House no., street, area" required>
+                <span class="error-msg">Please enter your address.</span>
+              </div>
+              <div class="form-field">
+                <label>City *</label>
+                <input type="text" id="shipCity" required>
+                <span class="error-msg">Please enter your city.</span>
+              </div>
+              <div class="form-field">
+                <label>State *</label>
+                <input type="text" id="shipState" required>
+                <span class="error-msg">Please enter your state.</span>
+              </div>
+              <div class="form-field">
+                <label>Pincode *</label>
+                <input type="text" id="shipPincode" required>
+                <span class="error-msg">Please enter a valid pincode.</span>
+              </div>
+              <div class="form-field">
+                <label>Country *</label>
+                <select id="shipCountry" required>
+                  <option value="India">India</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3><span class="num">2</span> Payment Method</h3>
+            <div class="pay-methods">
+              <label class="pay-method active">
+                <input type="radio" name="payment" value="card" checked>
+                <div><div class="pm-name">Credit / Debit Card</div><div class="pm-desc">Visa, Mastercard &amp; RuPay accepted</div></div>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="upi">
+                <div><div class="pm-name">UPI</div><div class="pm-desc">Pay using Google Pay, PhonePe or any UPI app</div></div>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="cod">
+                <div><div class="pm-name">Cash on Delivery</div><div class="pm-desc">Pay in cash when your order arrives</div></div>
+              </label>
+            </div>
+            <div class="card-fields show" id="cardFields">
+              <div class="form-field full"><label>Name on Card</label><input type="text" placeholder="As shown on card"></div>
+              <div class="form-field full"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"></div>
+              <div class="form-field"><label>Expiry Date</label><input type="text" placeholder="MM/YY"></div>
+              <div class="form-field"><label>CVV</label><input type="text" placeholder="123"></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="summary-box">
+          <h3>Order Summary</h3>
+          <div id="checkoutOrderLines"></div>
+          <div class="coupon-row">
+            <input type="text" id="coCouponInput" placeholder="Coupon code">
+            <button type="button" id="coApplyCouponBtn" class="btn btn-dark btn-sm">Apply</button>
+          </div>
+          <div class="coupon-msg" id="coCouponMsg"></div>
+          <div class="summary-row"><span>Subtotal</span><span id="coSubtotal">₹0</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="coShipping">Free</span></div>
+          <div class="summary-row" id="coDiscountRow" style="display:none;"><span>Discount</span><span id="coDiscount">-₹0</span></div>
+          <div class="summary-row total"><span>Total</span><span id="coTotal">₹0</span></div>
+          <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+        </aside>
+      </form>
+    </div>
+
+    <div id="orderConfirmation" class="confirm-box" style="display:none;">
+      <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
+      <h2>Order Confirmed!</h2>
+      <p>Thank you for shopping with StyleHub. A confirmation has been sent to your email.<br>Estimated delivery: <strong id="confirmEta"></strong></p>
+      <div class="order-id-box">Order ID: <strong id="confirmOrderId"></strong></div>
+      <div class="hero-cta" style="justify-content:center;">
+        <a href="account.html#orders" class="btn btn-dark">View Order</a>
+        <a href="products.html" class="btn btn-outline">Continue Shopping</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

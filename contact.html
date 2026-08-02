@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — StyleHub</title>
+<meta name="description" content="Get in touch with StyleHub — find store locations, hours, phone numbers or send us a message.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn" id="accountLink" title="Account"><i class="fa-regular fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Contact</nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container contact-layout">
+
+    <div>
+      <div class="section-head left">
+        <div class="divider left"><span></span></div>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-sub">We usually reply within 24 hours.</p>
+      </div>
+
+      <div class="contact-info-card">
+        <i class="fa-solid fa-phone"></i>
+        <div><h4>Call Us</h4><p>+91 98765 43210 &nbsp;(Mon–Sat, 10am–7pm IST)</p></div>
+      </div>
+      <div class="contact-info-card">
+        <i class="fa-solid fa-envelope"></i>
+        <div><h4>Email Us</h4><p>support@stylehub.com</p></div>
+      </div>
+      <div class="contact-info-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <div><h4>Head Office</h4><p>12 Fashion Avenue, Connaught Place, New Delhi 110001</p></div>
+      </div>
+      <div class="contact-info-card">
+        <i class="fa-solid fa-clock"></i>
+        <div><h4>Store Hours</h4><p>Monday – Sunday: 10:00 AM – 9:00 PM</p></div>
+      </div>
+
+      <h3 style="margin:40px 0 6px;font-size:1.2rem;">Visit Our Stores</h3>
+      <div class="store-list">
+        <div class="store-card">
+          <h4>StyleHub — Connaught Place, Delhi</h4>
+          <p><i class="fa-solid fa-location-dot"></i> 12 Fashion Avenue, Connaught Place, New Delhi 110001</p>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-clock"></i> 10:00 AM – 9:00 PM, all days</p>
+        </div>
+        <div class="store-card">
+          <h4>StyleHub — Bandra, Mumbai</h4>
+          <p><i class="fa-solid fa-location-dot"></i> 45 Linking Road, Bandra West, Mumbai 400050</p>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 11223</p>
+          <p><i class="fa-solid fa-clock"></i> 10:00 AM – 9:30 PM, all days</p>
+        </div>
+        <div class="store-card">
+          <h4>StyleHub — Indiranagar, Bengaluru</h4>
+          <p><i class="fa-solid fa-location-dot"></i> 78 100 Feet Road, Indiranagar, Bengaluru 560038</p>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 99887</p>
+          <p><i class="fa-solid fa-clock"></i> 10:00 AM – 9:00 PM, all days</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="map-shell">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>Interactive store map — connect a maps API key to enable live directions.</span>
+      </div>
+
+      <div class="section-head left">
+        <div class="divider left"><span></span></div>
+        <h2 class="section-title">Send Us a Message</h2>
+      </div>
+      <form class="form-card" id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label>Your Name *</label><input type="text" id="contactName" required><span class="error-msg">Please enter your name.</span></div>
+          <div class="form-field"><label>Email Address *</label><input type="email" id="contactEmail" required><span class="error-msg">Please enter a valid email.</span></div>
+          <div class="form-field full"><label>Subject *</label><input type="text" id="contactSubject" required><span class="error-msg">Please enter a subject.</span></div>
+          <div class="form-field full"><label>Message *</label><textarea id="contactMessage" rows="5" required></textarea><span class="error-msg">Please enter your message.</span></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="auth-msg" id="contactMsg"></p>
+      </form>
+
+      <div id="faq" style="margin-top:50px;">
+        <h3 style="margin-bottom:10px;font-size:1.2rem;">Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <div class="faq-q">What is your return policy? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">We offer free returns and exchanges within 15 days of delivery, provided items are unworn and tagged.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does delivery take? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">Orders typically arrive within 4–7 business days across India, and 7–14 days for international shipping.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you offer Cash on Delivery? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">Yes — Cash on Delivery is available at checkout alongside card and UPI payments.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I track my order? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">Log in and visit "Order History" under My Account to see live status updates for every order.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

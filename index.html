@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StyleHub — Premium Fashion for Men, Women & Kids</title>
+<meta name="description" content="StyleHub is a premium online fashion store offering trendy clothing, footwear and accessories for men, women and kids.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn" id="accountLink" title="Account"><i class="fa-regular fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow"><span>●</span> New Season Arrivals</div>
+      <h1 class="hero-title">Redefine your<br><i>everyday elegance</i></h1>
+      <p class="hero-desc">Discover trend-led clothing, footwear and accessories for men, women and kids — designed with quality fabrics and finished with an eye for detail.</p>
+      <div class="hero-cta">
+        <a href="products.html?gender=women" class="btn btn-primary">Shop Women</a>
+        <a href="products.html?gender=men" class="btn btn-outline light">Shop Men</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <img src="https://picsum.photos/seed/stylehub-hero/700/900" alt="StyleHub seasonal collection">
+        <div class="hero-tag">
+          <strong>Up to 40% Off</strong>
+          <span>Season Sale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>✦ Men's Collection &nbsp; ✦ Women's Collection &nbsp; ✦ Kids Collection &nbsp; ✦ New Arrivals &nbsp; ✦ Free Shipping Over ₹2,999 &nbsp;</span>
+    <span>✦ Men's Collection &nbsp; ✦ Women's Collection &nbsp; ✦ Kids Collection &nbsp; ✦ New Arrivals &nbsp; ✦ Free Shipping Over ₹2,999 &nbsp;</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="divider"><span></span></div>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-sub">Curated edits for every member of the family.</p>
+    </div>
+    <div class="categories-grid">
+      <a href="products.html?gender=men" class="cat-card reveal">
+        <img src="https://picsum.photos/seed/stylehub-cat-men/600/800" alt="Men's Collection">
+        <div class="cat-card-info">
+          <span>25 Products</span>
+          <h3>Men's Collection</h3>
+        </div>
+      </a>
+      <a href="products.html?gender=women" class="cat-card reveal">
+        <img src="https://picsum.photos/seed/stylehub-cat-women/600/800" alt="Women's Collection">
+        <div class="cat-card-info">
+          <span>Trending</span>
+          <h3>Women's Collection</h3>
+        </div>
+      </a>
+      <a href="products.html?gender=kids" class="cat-card reveal">
+        <img src="https://picsum.photos/seed/stylehub-cat-kids/600/800" alt="Kids Collection">
+        <div class="cat-card-info">
+          <span>Playful & Comfy</span>
+          <h3>Kids Collection</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="divider"><span></span></div>
+      <h2 class="section-title">Featured Collection</h2>
+      <p class="section-sub">New arrivals and seasonal favourites, handpicked for you.</p>
+    </div>
+    <div class="product-grid" id="featuredGrid"></div>
+    <div class="text-center" style="margin-top:44px;">
+      <a href="products.html" class="btn btn-dark">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<section class="offer-band">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center;color:#fff;"><span>●</span> Limited Time</span>
+    <h2>The Season Sale ends soon</h2>
+    <p>Enjoy up to 40% off across Men's, Women's and Kids' collections.</p>
+    <div class="countdown" id="countdown">
+      <div><strong id="cdDays">00</strong><span>Days</span></div>
+      <div><strong id="cdHours">00</strong><span>Hours</span></div>
+      <div><strong id="cdMins">00</strong><span>Mins</span></div>
+      <div><strong id="cdSecs">00</strong><span>Secs</span></div>
+    </div>
+    <a href="products.html" class="btn btn-gold">Shop the Sale</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h3>Free Shipping</h3>
+        <p>Complimentary delivery on all orders above ₹2,999, pan-India.</p>
+      </div>
+      <div class="value-card reveal">
+        <i class="fa-solid fa-rotate-left"></i>
+        <h3>Easy 15-Day Returns</h3>
+        <p>Change of heart? Return or exchange within 15 days of delivery.</p>
+      </div>
+      <div class="value-card reveal">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Secure Checkout</h3>
+        <p>Your payments and data are protected end-to-end, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h3>Join the StyleHub List</h3>
+    <p>Be first to know about new drops, exclusive offers and style edits.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn btn-gold">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

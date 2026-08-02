@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Detail — StyleHub</title>
+<meta name="description" content="View product details, choose your size and colour, and add to cart on StyleHub.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fa-solid fa-truck-fast"></i>&nbsp; Free shipping on orders above ₹2,999</span>
+    <span><a href="contact.html">Store Locator</a>&nbsp;|&nbsp;<a href="contact.html">Help Center</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Hub</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html?gender=men">Men</a>
+      <a href="products.html?gender=women">Women</a>
+      <a href="products.html?gender=kids">Kids</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </form>
+      <a href="login.html" class="icon-btn" id="accountLink" title="Account"><i class="fa-regular fa-user"></i></a>
+      <a href="account.html#wishlist" class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge wishlist-count">0</span></a>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+      <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1 id="pdBannerTitle">Product</h1>
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a> <span class="sep">/</span>
+      <a href="products.html" id="pdBreadcrumbCat">Shop</a> <span class="sep">/</span>
+      <span id="pdBreadcrumbName">Product</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container pd-layout">
+
+    <div class="pd-gallery">
+      <div class="pd-gallery-main"><img id="pdMainImage" src="" alt="Product image"></div>
+      <div class="pd-thumbs" id="pdThumbs"></div>
+    </div>
+
+    <div class="pd-info">
+      <div class="product-cat" id="pdBrand">Brand</div>
+      <h1 class="pd-title" id="pdName">Product Name</h1>
+      <div class="pd-meta">
+        <span class="stars" id="pdStars"></span>
+        <span id="pdReviewCount">0 Reviews</span>
+      </div>
+      <div class="pd-price">
+        <span class="price-now" id="pdPrice">₹0</span>
+        <span class="price-old" id="pdOldPrice"></span>
+      </div>
+      <p class="pd-desc" id="pdShortDesc">Loading description…</p>
+
+      <div class="option-row">
+        <h4>Color: <span class="selected-value" id="pdSelectedColor"></span></h4>
+        <div class="color-options" id="pdColors"></div>
+      </div>
+
+      <div class="option-row">
+        <h4>Size: <span class="selected-value" id="pdSelectedSize">Select a size</span><span class="size-guide-link" id="sizeGuideLink">Size Guide</span></h4>
+        <div class="size-options" id="pdSizes"></div>
+      </div>
+
+      <div class="option-row">
+        <h4>Quantity</h4>
+        <div class="qty-selector">
+          <button type="button" id="pdQtyMinus">−</button>
+          <input type="number" id="pdQty" value="1" min="1" max="10">
+          <button type="button" id="pdQtyPlus">+</button>
+        </div>
+      </div>
+
+      <div class="pd-actions">
+        <button class="btn btn-primary" id="addToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+        <button class="btn btn-outline" id="pdWishlistBtn"><i class="fa-regular fa-heart"></i> Wishlist</button>
+      </div>
+      <div class="stock-msg in"><i class="fa-solid fa-circle-check"></i> In stock — ready to ship in 1-2 business days</div>
+
+      <div class="trust-row">
+        <div class="trust-item"><i class="fa-solid fa-truck-fast"></i> Free shipping over ₹2,999</div>
+        <div class="trust-item"><i class="fa-solid fa-rotate-left"></i> 15-day easy returns</div>
+        <div class="trust-item"><i class="fa-solid fa-certificate"></i> 100% authentic</div>
+        <div class="trust-item"><i class="fa-solid fa-lock"></i> Secure checkout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pd-tabs">
+    <div class="tab-nav">
+      <button class="active" data-tab="description">Description</button>
+      <button data-tab="specs">Specifications</button>
+      <button data-tab="reviews">Reviews</button>
+    </div>
+    <div class="tab-panel active" id="tab-description">
+      <p id="pdFullDesc"></p>
+      <ul id="pdFeatures"></ul>
+    </div>
+    <div class="tab-panel" id="tab-specs">
+      <ul>
+        <li><strong>Care:</strong> Follow the wash-care label inside the garment.</li>
+        <li><strong>Fit:</strong> True to size — see size guide for full measurements.</li>
+        <li><strong>Origin:</strong> Designed in-house, ethically manufactured.</li>
+        <li><strong>Packaging:</strong> Delivered in recyclable StyleHub packaging.</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="tab-reviews">
+      <div id="reviewsList"></div>
+      <h4 style="margin:30px 0 16px;font-family:var(--font-body);font-size:1rem;">Write a Review</h4>
+      <form id="reviewForm">
+        <div class="form-grid">
+          <div class="form-field"><label>Your Name</label><input type="text" id="reviewName" placeholder="e.g. Priya M."></div>
+          <div class="form-field">
+            <label>Rating</label>
+            <select id="reviewRating">
+              <option value="5">★★★★★ Excellent</option>
+              <option value="4">★★★★ Good</option>
+              <option value="3">★★★ Average</option>
+              <option value="2">★★ Below Average</option>
+              <option value="1">★ Poor</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Your Review</label><textarea id="reviewText" rows="3" placeholder="Share your thoughts about this product..."></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit Review</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-head">
+      <div class="divider"><span></span></div>
+      <h2 class="section-title">You May Also Like</h2>
+    </div>
+    <div class="product-grid" id="relatedGrid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="index.html" class="logo" style="color:#fff;">Style<span>Hub</span></a>
+      <p>Premium fashion for men, women and kids — trend-led design, made to last.</p>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="products.html?gender=men">Men's Collection</a></li>
+        <li><a href="products.html?gender=women">Women's Collection</a></li>
+        <li><a href="products.html?gender=kids">Kids Collection</a></li>
+        <li><a href="products.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">Shipping &amp; Returns</a></li>
+        <li><a href="account.html">Track My Order</a></li>
+        <li><a href="contact.html#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>&nbsp; 12 Fashion Avenue, Connaught Place, New Delhi</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i>&nbsp; support@stylehub.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> StyleHub. All rights reserved. (Internship demo project)</span>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-solid fa-money-bill-wave"></i><i class="fa-brands fa-google-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  document.getElementById('sizeGuideLink').addEventListener('click', function(){
+    alert('Size Guide\n\nS: Chest 36-38in | M: 38-40in | L: 40-42in | XL: 42-44in | XXL: 44-46in\n\nFor footwear, sizes shown are UK standard.');
+  });
+</script>
+</body>
+</html>
